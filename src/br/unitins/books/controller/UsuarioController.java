@@ -1,17 +1,18 @@
 package br.unitins.books.controller;
 
-import java.io.Serializable;
+import java.io.Serializable;	
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 import br.unitins.books.application.Util;
+import br.unitins.books.model.TipoUsuario;
 import br.unitins.books.model.Usuario;
 
 @Named
-@ViewScoped
+@ApplicationScoped
 public class UsuarioController implements Serializable {
 
 	private static final long serialVersionUID = -563227102506849534L;
@@ -83,6 +84,10 @@ public class UsuarioController implements Serializable {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+	
+	public TipoUsuario[] getListaTipoUsuario() {
+		return TipoUsuario.values();
 	}
 	
 	
